@@ -1,0 +1,94 @@
+#discussion-container {
+  padding: 5%;
+  background-color: #FDFDFD;
+
+  #see-all-discussions-button {
+    margin-top: 5%;
+  }
+}
+
+.tag-cloud {
+  color: #76777C;
+  padding: 10px 20px;
+  font-size: 1.1em;
+}
+
+.tag-cloud a {
+  color: $brand-blue;
+  margin-left: 10px;
+}
+
+.tag-cloud a:before {
+  content: '#';
+}
+
+#discussion-container .discussion-card {
+  margin-top: 30px;
+
+  .btn.btn-block.btn-green {
+    color: white;
+    background-color: $brand-green;
+    border-radius: 0;
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+
+}
+
+#project-container {
+
+  padding: 5%;
+
+  .project-title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .btn.btn-block.btn-green {
+    color: white;
+    background-color: $brand-green;
+    border-radius: 0;
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+
+  #see-all-projects-button { margin-bottom: 20px; }
+}
+
+.project-section-header h2 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.avatar { border-radius: 50%; }
+
+body.single-question {
+  .question-body a { color: $brand-blue; }
+  hr { margin-top: 0px; }
+  input#submit {
+    background-color: $brand-green;
+    border-radius: 0;
+    margin-top: 10px;
+    padding: 5px 30px;
+    border: none;
+    margin-bottom: 10px;
+  }
+
+  article { margin-top: 5%; }
+
+  textarea#comment {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .the-comment {
+    padding-bottom: 30px;
+  }
+
+  .the-comment hr { margin-top: 10px; margin-bottom: 30px; }
+}
+
+body.page-template-template-about-us {
+  #topBannerText { background-color: $dark-green; }
+  .the-content { margin-bottom: 40px; color: $light-grey; }
+  h2 { color: $medium-grey; }
+}

@@ -19,7 +19,8 @@ function setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
-    'primary_navigation' => __('Primary Navigation', 'sage')
+    'primary_navigation' => __('Primary Navigation', 'sage'),
+    'footer_navigation' => __('Footer Navigation', 'sage')
   ]);
 
   // Add post thumbnails
@@ -38,6 +39,13 @@ function setup() {
 
   // Tell the TinyMCE editor to use a custom stylesheet
   add_editor_style(Assets\asset_path('styles/editor-style.css'));
+
+  // Disable the admin bar for non-admins
+  // https://codex.wordpress.org/Function_Reference/show_admin_bar
+  if( ! current_user_can('administrator') && ! is_admin() ) {
+    add_filter('show_admin_bar', '__return_false');
+  }
+
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 

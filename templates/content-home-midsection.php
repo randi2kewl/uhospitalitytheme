@@ -1,0 +1,38 @@
+<div id="topBanner" class="row">
+	<div id="topBannerText" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+		<h1>Lorem ipsum is simply dummy text of the printing and typesetting industry.</h1>
+	</div>
+</div>
+
+<?php if ( ! is_user_logged_in() ) : ?>
+
+	<div id="registration-form-container" class="row">
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2">
+			<?php gravity_form(1, false, false, false, null, false, 1, true); ?>
+		</div>
+	</div>
+
+	<div id="login-form-container" class="row">
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2">
+			<?php $args = array(
+				'echo'           => true,
+				'redirect' => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
+				'form_id'        => 'loginform',
+				'label_username' => __( 'Username' ),
+				'label_password' => __( 'Password' ),
+				'label_remember' => __( 'Remember Me' ),
+				'label_log_in'   => __( 'Log In' ),
+				'id_username'    => 'user_login',
+				'id_password'    => 'user_pass',
+				'id_remember'    => 'rememberme',
+				'id_submit'      => 'wp-submit',
+				'remember'       => false,
+				'value_username' => '',
+				'value_remember' => false
+			); ?>
+			<?php wp_login_form(); ?>
+		</div>
+	</div>
+
+
+<?php endif; ?>

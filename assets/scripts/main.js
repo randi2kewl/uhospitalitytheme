@@ -19,6 +19,24 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
+        $(document).on('click', '#see-all-projects-button', function(){
+          $.get("/project-api/",function(data){
+            $("#project-api").append(data);
+          },'html');
+        });
+
+        $(document).on('click', '#registration-form > a', function(){
+          $('#login-form-container').hide();
+          $('#topBanner').hide();
+          $('#registration-form-container').show();
+        });
+
+        $(document).on('click', '#login-form > a', function(){
+          $('#registration-form-container').hide();
+          $('#topBanner').hide();
+          $('#login-form-container').show();
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

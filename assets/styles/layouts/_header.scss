@@ -1,0 +1,73 @@
+header {
+  background-color: #FDFDFD;
+  border-bottom: solid #DBDBDB 1px;
+}
+
+#topBannerText {
+  padding: 5% 10%;
+  background-color: #8EC2E6;
+  color: #FFFFFF;
+
+  h1 {
+    font-size: 3em;
+  }
+}
+
+nav.navbar ul {
+  margin-top: 20px;
+}
+
+a.navbar-brand > img {
+  height: 60px;
+}
+
+nav.navbar ul > li > a {
+  color: #BCBCBD;
+}
+
+nav.navbar ul > li.current-menu-item > a {
+  color: $light-grey;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+  background: transparent;
+  color: #76777C;
+}
+
+nav.navbar ul > li.btn-outlined {
+  border-width: 1px;
+  padding: 0;
+  margin-right: 5px;
+  margin-top: 5px;
+
+  a {
+    padding: 7px 20px;
+  }
+}
+
+nav.navbar ul > li.btn-outlined.btn-green > a {
+  color: $brand-green;
+}
+
+nav.navbar ul > li.btn-outlined.btn-blue > a {
+  color: $brand-blue;
+}
+
+nav.navbar ul > li.btn-outlined > a:hover {
+  color: white;
+}
+
+nav.navbar ul > li.nav-social {
+  font-size: 1.75em;
+  padding-top: 10px;
+
+  a {
+    padding: 0;
+    color: #000000;
+  }
+}
+
+#login-form-container,
+#registration-form-container {
+  display: none;
+}

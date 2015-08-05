@@ -14,6 +14,14 @@ add_theme_support('soil-nice-search');      // Enable nice search from Soil
 add_theme_support('soil-jquery-cdn');       // Enable to load jQuery from the Google CDN
 
 /**
+ * Change post type urls
+ */
+//function change_question_slug($args) {
+//  $args[]
+//}
+//add_filter('qa_register_post_type_args', 'change_question_slug', 10, 1);
+
+/**
  * Configuration values
  */
 if (!defined('WP_ENV')) {
@@ -53,8 +61,11 @@ function display_sidebar() {
        */
       [
         'is_404',
+        ['is_page', 'about'],
         'is_front_page',
-        ['is_page_template', 'template-custom.php']
+        'is_single',
+        'is_archive',
+        ['is_page_template', 'template-custom.php', 'template-home.php', 'template-about-us.php']
       ]
     );
 

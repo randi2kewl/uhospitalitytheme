@@ -1,0 +1,10 @@
+footer { border-top: solid #DBDBDB 1px; }
+#footer-social-links {
+  background-color: #FDFDFD;
+  padding: 1em;
+}
+
+#menu-footer-navigation {  margin-top: 20px; }
+#menu-footer-navigation > li > a { color: $light-grey; }
+#menu-footer-navigation > li > a:hover { color: $medium-grey; }
+#menu-footer-navigation > li > a > span.green { color: $brand-green; }
