@@ -21,7 +21,7 @@
         // JavaScript to be fired on all pages
 
         if(0 < $('#user_login').length) {
-          $('p.login-username').replaceWith('<input type="text" name="log" id="user_login" class="input" value="" size="20" placeholder="Email">')
+          $('p.login-username').replaceWith('<input type="text" name="log" id="user_login" class="input" value="" size="20" placeholder="Email">');
         }
         if(0 < $('#user_pass').length) {
           $('p.login-password').replaceWith('<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" placeholder="Password">');
