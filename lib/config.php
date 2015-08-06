@@ -61,11 +61,17 @@ function display_sidebar() {
        */
       [
         'is_404',
-        ['is_page', 'about'],
+        ['is_page', 'about', 'contact', 'get-in-touch'],
         'is_front_page',
         'is_single',
         'is_archive',
-        ['is_page_template', 'template-custom.php', 'template-home.php', 'template-about-us.php']
+        ['is_page_template',
+            'template-custom.php',
+            'template-home.php',
+            'template-about-us.php',
+            'template-contact.php',
+            'template-ask-question.php'
+        ]
       ]
     );
 

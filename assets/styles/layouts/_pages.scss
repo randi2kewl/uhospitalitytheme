@@ -1,6 +1,6 @@
 #discussion-container {
   padding: 5%;
-  background-color: #FDFDFD;
+  background-color: $background;
 
   #see-all-discussions-button {
     margin-top: 5%;
@@ -15,7 +15,7 @@
 
 .tag-cloud a {
   color: $brand-blue;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .tag-cloud a:before {
@@ -24,6 +24,7 @@
 
 #discussion-container .discussion-card {
   margin-top: 30px;
+  margin-bottom: 30px;
 
   .btn.btn-block.btn-green {
     color: white;
@@ -91,4 +92,110 @@ body.page-template-template-about-us {
   #topBannerText { background-color: $dark-green; }
   .the-content { margin-bottom: 40px; color: $light-grey; }
   h2 { color: $medium-grey; }
+}
+
+a#see-all-projects-button { margin-top: 30px; }
+
+#registration-form-container,
+#login-form-container {
+  color: $light-grey;
+  padding-top: 20px;
+  background-image: linear-gradient(top, $background, $background 80%, transparent 80%, transparent 100%);
+  background-image: -webkit-linear-gradient(top, $background, $background 80%, transparent 80%, transparent 100%)
+}
+#registration-form-container label { display: none; }
+#registration-form-container input[type="submit"],
+input#wp-submit {
+  @extend .btn-blue;
+  @extend .btn-outlined;
+  @extend .btn;
+  padding: 20px 60px;
+  background-color: $background;
+}
+
+input#wp-submit {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#registration-form-container .gform_footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#registration-form-container .registration-input input,
+#login-form-container input#user_login,
+#login-form-container input#user_pass {
+  @extend .input-lg;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background-color: $background;
+  font-family: 'nexa_light', 'Arial', 'sans-serif';
+  border: solid 1px $light-grey;
+  margin-top: 10px;
+}
+
+label[for="user_login"],
+label[for="user_pass"],
+p.login-remember { display: none; }
+#loginform { text-align: center; margin-top: 30px; }
+
+body.single-question article .question { border-bottom: none; }
+
+#custom-search-form {
+  margin:0;
+  margin-top: 5px;
+  padding: 0;
+}
+
+#custom-search-form .search-query {
+  padding-right: 3px;
+  padding-right: 4px \9;
+  padding-left: 3px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+  margin-bottom: 0;
+  border-radius: 0;
+
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+
+#custom-search-form .search-query:focus,
+#custom-search-form button:focus {
+  outline: none;
+}
+
+#custom-search-form button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.search-query:focus + button {
+  z-index: 3;
+}
+
+.gfield_label {
+  display: none;
+}
+
+body.page-template-template-contact form input[type="submit"] {
+  @extend .btn-blue;
+  @extend .btn-outlined;
+  @extend .btn;
+  padding: 20px 60px;
+  background-color: $background;
 }

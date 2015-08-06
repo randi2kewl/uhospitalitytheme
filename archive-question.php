@@ -12,26 +12,41 @@
 </div>
 
 <div id="discussion-container" class="row">
+
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right question-search">
+		<form method="get" action="<?php echo qa_get_url('archive'); ?>" id="custom-search-form" class="form-search form-horizontal pull-right">
+			<div class="input-append">
+				<input type="text" name="s" class="search-query" placeholder="Search Discussions" value="<?php echo get_search_query(); ?>">
+				<button type="submit" class="btn"><i class="fa fa-search"></i></button>
+			</div>
+		</form>
+	</div>
+
+
 	<?php if ( !have_posts() ) : ?>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<p><?php $question_ptype = get_post_type_object( 'question' ); echo $question_ptype->labels->not_found; ?></p>
 		</div>
 	<?php else: ?>
 
-		<?php
-		$question_query = new WP_Query( array(
-			'post_type' => 'question',
-			'posts_per_page' => 20,
-		) );
+		<?php global $wp_query; ?>
 
-		while ( $question_query->have_posts() ) : $question_query->the_post(); ?>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<h2 class="light-grey"><?php single_cat_title('Category: '); ?></h2>
+			</div>
+		</div>
+
+
+		<?php
+		while ( have_posts() ) : the_post(); ?>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 discussion-card">
 
 				<div class="row">
-					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 avatar-container text-right">
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 avatar-container text-center">
 						<?php echo bp_core_fetch_avatar ( array( 'item_id' => $post->post_author, 'type' => 'thumb' ) ) ?>
 					</div>
-					<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 name-container light-grey">
 								by <?php the_qa_user_link( $post->post_author ); ?>
@@ -57,7 +72,7 @@
 				</div>
 
 			</div> <!-- /.discussion-card -->
-		<?php endwhile; wp_reset_query();?>
+		<?php endwhile; $wp_query->set('posts_per_page', 6); ?>
 
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 			<a id="see-all-discussions-button" class="btn btn-blue btn-outlined" href="<?php echo network_home_url('/discussions'); ?>">SHOW MORE</a>

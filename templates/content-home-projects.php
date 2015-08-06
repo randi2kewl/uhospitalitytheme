@@ -21,11 +21,11 @@
 
 			<div class="row">
 
-				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 					by <span class="blue"><?= get_post_field('by') ?></span>
 				</div>
 
-				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-right">
 					<?= \Roots\Sage\Utils\humanTiming($post->post_date); ?>
 				</div>
 

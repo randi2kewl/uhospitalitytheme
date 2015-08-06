@@ -25,3 +25,41 @@
     </nav><!-- /.navbar -->
   </div> <!-- /.container-fluid -->
 </header>
+
+
+<?php if ( ! is_user_logged_in() ) : ?>
+
+  <div id="registration-form-container" class="row">
+    <div id="registration-form-label" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+      Fill in the form below and you're ready to go!
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2">
+      <?php gravity_form(1, false, false, false, null, false, 1, true); ?>
+    </div>
+  </div>
+
+  <div id="login-form-container" class="row">
+    <div id="login-form-label" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+      Fill in the form below and you're ready to go!
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2">
+      <?php $args = array(
+          'echo'           => true,
+          'redirect' => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
+          'form_id'        => 'loginform',
+          'label_username' => __( '' ),
+          'label_password' => __( '' ),
+          'label_log_in'   => __( 'LOGIN' ),
+          'id_username'    => 'user_login',
+          'id_password'    => 'user_pass',
+          'id_submit'      => 'wp-submit',
+          'remember'       => false,
+          'value_username' => '',
+          'value_remember' => false
+      ); ?>
+      <?php wp_login_form(); ?>
+    </div>
+  </div>
+
+
+<?php endif; ?>

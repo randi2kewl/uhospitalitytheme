@@ -26,12 +26,12 @@ nav.navbar ul > li > a {
 }
 
 nav.navbar ul > li.current-menu-item > a {
-  color: $light-grey;
+  color: $medium-grey;
 }
 
 .nav > li > a:focus, .nav > li > a:hover {
   background: transparent;
-  color: #76777C;
+  color: $medium-grey;
 }
 
 nav.navbar ul > li.btn-outlined {
@@ -60,10 +60,15 @@ nav.navbar ul > li.btn-outlined > a:hover {
 nav.navbar ul > li.nav-social {
   font-size: 1.75em;
   padding-top: 10px;
+  text-align: center;
 
   a {
     padding: 0;
     color: #000000;
+  }
+
+  a:hover {
+    color: $brand-blue;
   }
 }
 

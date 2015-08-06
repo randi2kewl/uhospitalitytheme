@@ -1,5 +1,32 @@
+@font-face {
+  font-family: 'nexa';
+  src: url('#{$font-path}nexa_regular-webfont.eot');
+  src: url('#{$font-path}nexa_regular-webfont?#iefix') format('embedded-opentype'),
+  url('#{$font-path}nexa_regular-webfont.woff2') format('woff2'),
+  url('#{$font-path}nexa_regular-webfont.woff') format('woff'),
+  url('#{$font-path}nexa_regular-webfont.svg#nexa') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nexa_light';
+  src: url('#{$font-path}nexa_light-webfont.eot');
+  src: url('#{$font-path}nexa_light-webfont?#iefix') format('embedded-opentype'),
+  url('#{$font-path}nexa_light-webfont.woff2') format('woff2'),
+  url('#{$font-path}nexa_light-webfont.woff') format('woff'),
+  url('#{$font-path}nexa_light-webfont.svg#nexa_light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'nexa', 'Arial', 'sans-serif';
+}
+
 .light-grey { color: $light-grey; }
 .medium-grey { color: $medium-grey; }
 .blue { color: $brand-blue; }
 .black { color: black; }
 a.qa-user-link { color: $brand-blue; }
+aside.sidebar { display: none; }

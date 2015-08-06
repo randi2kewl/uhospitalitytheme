@@ -15,10 +15,10 @@
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 discussion-card">
 
 				<div class="row">
-					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 avatar-container text-center">
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 avatar-container text-center">
 						<?php echo bp_core_fetch_avatar ( array( 'item_id' => $post->post_author, 'type' => 'thumb' ) ) ?>
 					</div>
-					<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 name-container light-grey">
 								by <?php the_qa_user_link( $post->post_author ); ?>

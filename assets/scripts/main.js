@@ -20,22 +20,46 @@
       init: function() {
         // JavaScript to be fired on all pages
 
+        if(0 < $('#user_login').length) {
+          $('p.login-username').replaceWith('<input type="text" name="log" id="user_login" class="input" value="" size="20" placeholder="Email">')
+        }
+        if(0 < $('#user_pass').length) {
+          $('p.login-password').replaceWith('<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" placeholder="Password">');
+        }
+
         $(document).on('click', '#see-all-projects-button', function(){
           $.get("/project-api/",function(data){
             $("#project-api").append(data);
           },'html');
         });
 
-        $(document).on('click', '#registration-form > a', function(){
-          $('#login-form-container').hide();
-          $('#topBanner').hide();
-          $('#registration-form-container').show();
+        $(document).on('click', '.must-log-in > a', function(){
+          $('#login-form-container').slideDown(800);
+          return false;
         });
 
-        $(document).on('click', '#login-form > a', function(){
-          $('#registration-form-container').hide();
-          $('#topBanner').hide();
-          $('#login-form-container').show();
+        $(document).on('click', '.menu-item.registration-button', function(){
+          if($('#topBanner').is(':visible')) {
+            $('#topBanner').slideUp(800);
+          }
+          if($('#login-form-container').is(':visible')) {
+            $('#login-form-container').slideUp(800);
+          }
+          if($('#registration-form-container').not(':visible')) {
+            $('#registration-form-container').slideDown(800);
+          }
+        });
+
+        $(document).on('click', '.menu-item.login-button', function(){
+          if($('#topBanner').is(':visible')) {
+            $('#topBanner').slideUp(800);
+          }
+          if($('#login-form-container').not(':visible')) {
+            $('#login-form-container').slideDown(800);
+          }
+          if($('#registration-form-container').is(':visible')) {
+            $('#registration-form-container').slideUp(800);
+          }
         });
       },
       finalize: function() {
