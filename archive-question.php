@@ -22,6 +22,7 @@
 		</form>
 	</div>
 
+	<?php do_action( 'qa_before_content', 'archive-question' ); ?>
 
 	<?php if ( !have_posts() ) : ?>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -40,6 +41,7 @@
 
 		<?php
 		while ( have_posts() ) : the_post(); ?>
+			<?php do_action( 'qa_before_question_loop' ); ?>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 discussion-card">
 
 				<div class="row">
