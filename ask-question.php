@@ -1,21 +1,19 @@
 <?php get_template_part('templates/head'); ?>
-<?php get_template_part('templates/header'); ?>
+<?php get_template_part('templates/header', 'question'); ?>
 
 <div class="row">
     <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 light-grey">
-    	<h1>Ask a Question</h1>
+    	<h1>Start a Discussion</h1>
     </div>
 </div>
 
-<div id="qa-page-wrapper" class="row">
-    <div id="qa-content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <?php do_action( 'qa_before_content', 'ask-question' ); ?>
+<?php do_action( 'qa_before_content', 'ask-question' ); ?>
 
-    <div id="ask-question">
-    <?php the_question_form(); ?>
-    </div>
-
-    <?php do_action( 'qa_after_content', 'ask-question' ); ?>
+<div class="row">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1">
+        <div id="ask-question">
+        <?php the_question_form(); ?>
+        </div>
     </div>
 </div><!--#qa-page-wrapper-->
 

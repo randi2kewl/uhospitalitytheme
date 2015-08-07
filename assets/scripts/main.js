@@ -57,9 +57,59 @@
           if($('#registration-form-container').is(':visible')) {
             $('#registration-form-container').slideUp(800);
           }
-
-
         });
+
+        // Submit the password reset form via ajax
+        $( '#resetpassform' ).submit(function(e) {
+
+          e.preventDefault();
+
+          $('.login-error').slideUp();
+
+          //check if password fields are empty
+          if ($('#pass1').val() == '' || $('#pass1').val() == '') {
+            return false;
+          }
+
+          var formData = $(this).serialize();
+
+          $.ajax({
+            url: ajaxurl,
+            type: 'POST',
+            data: {form_values: formData, action: 'reset_user_pass'},
+          })
+              .done(function (status) {
+
+                switch (status) {
+
+                  case 'expiredkey' :
+                  case 'invalidkey' :
+                    $('.login-error').html('<div>Sorry, the link does not appear to be valid or is expired.</div>').slideDown();
+                    break;
+
+                  case 'mismatch' :
+                    $('.login-error').html('<div>The passwords do not match.</div>').slideDown();
+                    break;
+
+                  case 'success' :
+                    $('.login-error').html('<div>Your password has been reset.</div>').slideDown();
+                    break;
+
+                  default:
+                    console.log(status);
+                    $('.login-error').html('<div>Something went wrong.Please try again </div>').slideDown();
+                    break;
+
+                }
+
+              })
+              .fail(function () {
+                console.log("error");
+              })
+              .always(function () {
+                console.log("complete");
+              });
+        }); // end of password reset
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

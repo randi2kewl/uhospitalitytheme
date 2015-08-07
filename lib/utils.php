@@ -50,3 +50,46 @@ function show_posts_nav() {
     global $wp_query;
     return ($wp_query->max_num_pages > 1);
 }
+
+/**
+ * Reset the user pass after validation
+ *
+ * @author Aman Saini
+ * @since  1.0
+ * @return  Success/Error Message
+ */
+function reset_user_pass(){
+
+    parse_str( $_POST['form_values'], $params );
+
+    $user = check_password_reset_key($params['key'], $params['login']);
+
+    $status='';
+
+    // Check if key is valid
+    if ( is_wp_error($user) ) {
+        if ( $user->get_error_code() === 'expired_key' ){
+            $status = 'expiredkey' ;
+        }
+        else{
+            $status = 'invalidkey' ;
+        }
+
+        echo $status;
+        die;
+    }
+
+    // check if keys match
+    if ( isset($params['pass1']) && $params['pass1'] != $params['pass2'] ){
+        $status = 'mismatch';
+    }else{
+        // Update the user pass
+        reset_password($user, $params['pass1']);
+
+        $status ='success';
+    }
+
+    echo $status;
+    die;
+}
+add_action( 'wp_ajax_nopriv_reset_user_pass', 'reset_user_pass' );

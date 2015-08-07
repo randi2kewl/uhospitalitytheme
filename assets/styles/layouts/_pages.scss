@@ -67,7 +67,8 @@
 .avatar { border-radius: 50%; }
 .avatar-container > img.avatar.photo { margin-left:-10px; margin-top:-10px; }
 
-body.single-question {
+body.single-question,
+body.single-project {
   .question-body a { color: $brand-blue; }
   hr { margin-top: 0px; }
   input#submit {
@@ -92,6 +93,8 @@ body.single-question {
 
   .the-comment hr { margin-top: 10px; margin-bottom: 30px; }
 }
+
+.member-info { padding: 50px; }
 
 body.page-template-template-about-us {
   #topBannerText { background-color: $dark-green; }
@@ -197,10 +200,21 @@ body.single-question article .question { border-bottom: none; }
   display: none;
 }
 
-body.page-template-template-contact form input[type="submit"] {
+body.page-template-template-contact form input[type="submit"],
+input.qa-edit-submit[type="submit"] {
   @extend .btn-blue;
   @extend .btn-outlined;
   @extend .btn;
   padding: 20px 60px;
   background-color: $background;
 }
+
+#wp-question_content-editor-tools { display: none; }
+form#question-form { margin-top: 40px; }
+#wp-question_content-wrap.wp-editor-wrap { margin-top: 30px; }
+table#question-taxonomies { margin-top: 20px; margin-bottom: 30px; }
+div#ask-question { text-align: center; }
+textarea.wp-editor-area { border: solid 1px; }
+
+
+

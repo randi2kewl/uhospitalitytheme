@@ -21,7 +21,7 @@ get_template_part('templates/header');
 
 <div class="wrap container-fluid" role="document">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 member-info">
 					<?php do_action( 'qa_before_content', 'edit-question' ); ?>
 
 					<div id="qa-user-box">
@@ -49,7 +49,6 @@ get_template_part('templates/header');
 				</div>
 			</div>
 
-
 		<?php
 		$question_query = new WP_Query( array(
 		'author' => $userdata->ID,
@@ -60,6 +59,12 @@ get_template_part('templates/header');
 		?>
 
 			<div id="discussion-container" class="row">
+
+				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1">
+					<h3>Recent questions</h3>
+					<hr>
+				</div>
+
 				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1">
 
 					<?php
