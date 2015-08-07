@@ -76,3 +76,10 @@ nav.navbar ul > li.nav-social {
 #registration-form-container {
   display: none;
 }
+.form-group.forgot-text { display: none; }
+#resetpassform { display: none; }
+#forgot-password-link-container { text-align: center; margin-top: -25px; }
+
+form#login label, form#forgot label {
+  display: none;
+}

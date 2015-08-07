@@ -1,3 +1,11 @@
+<?php if(isset($_REQUEST['s'])) { ?>
+
+<?php
+get_template_part('templates/head');
+get_template_part('templates/header');
+?>
+<?php } ?>
+
 <?php global $wp_query; ?>
 
 <div class="row tag-cloud">
@@ -14,6 +22,10 @@
 </div>
 
 <div id="discussion-container" class="row">
+
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
+		<a id="start-discussion-button" href="discussions/ask" class="btn btn-green btn-outlined">Start Discussion</a>
+	</div>
 
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right question-search">
 		<form method="get" action="<?php echo qa_get_url('archive'); ?>" id="custom-search-form" class="form-search form-horizontal pull-right">
@@ -42,11 +54,15 @@
 			<?php get_template_part('templates/content', 'question'); ?>
 		</div>
 
-		<?php if(\Roots\Sage\Utils\show_posts_nav()) : ?>
+		<?php if(!isset($_REQUEST['s']) && \Roots\Sage\Utils\show_posts_nav()) { ?>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 				<a id="see-all-discussions-button" class="btn btn-blue btn-outlined">SHOW MORE</a>
 			</div>
-		<?php endif; ?>
+		<?php } ?>
 	<?php endif; ?>
 </div>
 
+
+<?php if(isset($_REQUEST['s'])) { ?>
+	<?php get_template_part('templates/footer'); ?>
+<?php } ?>

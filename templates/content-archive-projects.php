@@ -9,6 +9,10 @@
 		<h2>Lorem ipsum is simply dummy text of the printing and typesetting industry.</h2>
 	</div>
 
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
+		<a href="/new-project" id="project-form-button" class="btn btn-green btn-outlined">Submit New Project</a>
+	</div>
+
 	<?php projects_by_page(1, 6); ?>
 	<?php endif; ?>
 </div>

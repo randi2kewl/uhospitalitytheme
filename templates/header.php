@@ -57,38 +57,15 @@
           'value_username' => '',
           'value_remember' => false
       ); ?>
-      <?php wp_login_form(); ?>
+        <div id="loginform">
+            <?php echo do_shortcode('[login_widget]'); ?>
+            <p id="forgot-password-link-container"><a href="#" id="forgot-password-link">Forgot password?</a></p>
+        </div>
 
-        <?php
-        /*Load Scripts for password reset page*/
-        wp_enqueue_script( 'zxcvbn-async' );
-        wp_enqueue_script( 'user-profile' );
-        wp_enqueue_script( 'password-strength-meter' );
-        wp_enqueue_script( 'user-suggest' );
-        ?>
-        <form method="post" action="<?php echo get_bloginfo('url') ?>/wp-login.php" id="resetpassform" name="resetpassform">
+        <div id="resetpassform">
+            <?php echo do_shortcode('[forgot_password]'); ?>
+        </div>
 
-            <input type="hidden" name="login" value="<?php echo $_GET['login'] ?>" autocomplete="off">
-            <input type="hidden" name="key" value="<?php echo strip_tags($_GET['key']); ?>" />
-
-<!--            <p style="margin-bottom:20px" class="description indicator-hint">Your password needs to be at least seven characters. Mixing upper and lower case, numbers and symbols like ! " ? $ % ^ & ) will make it stronger.</p>-->
-
-            <p class="login-username">
-                <input  type="password" tabindex="10" size="20"  value="" placeholder="New Password" class="input" id="pass1" name="pass1">
-            </p>
-
-            <p class="login-password">
-                <input  type="password" tabindex="20" size="20" value="" placeholder="Confirm Password" class="input"   id="pass2" name="pass2">
-            </p>
-
-            <p class="forgotpass-submit">
-                <a id="forgot-cancel" href="<?php echo home_url('/signin'); ?>">Cancel</a>
-                <a id="submitforgotpasswordform" href="javascript:void(0)" style="background-position: 0px 4px;"><input type="submit" tabindex="100" value="Get New Password" id="forgot-submit" name="wp-submit"></a>
-            </p>
-
-            <div class="login-error"><div></div></div>
-
-        </form>
     </div>
   </div>
 

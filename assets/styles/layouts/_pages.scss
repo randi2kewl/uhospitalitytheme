@@ -113,7 +113,9 @@ a#see-all-projects-button { margin-top: 30px; }
 }
 #registration-form-container label { display: none; }
 #registration-form-container input[type="submit"],
-input#wp-submit {
+input#wp-submit,
+#resetpassform input[type="submit"],
+#log_forms input[name="login"][type="submit"] {
   @extend .btn-blue;
   @extend .btn-outlined;
   @extend .btn;
@@ -121,9 +123,9 @@ input#wp-submit {
   background-color: $background;
 }
 
-input#wp-submit {
+#log_forms input[name="login"][type="submit"] {
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 #registration-form-container .gform_footer {
@@ -132,6 +134,9 @@ input#wp-submit {
 }
 #registration-form-container .registration-input input,
 #login-form-container input#user_login,
+#login-form-container input#pass1,
+#login-form-container input[name="user_username"],
+#login-form-container input[name="user_password"],
 #login-form-container input#user_pass {
   @extend .input-lg;
   -webkit-border-radius: 0;
@@ -142,6 +147,8 @@ input#wp-submit {
   border: solid 1px $light-grey;
   margin-top: 10px;
 }
+
+form[name="forgot"] { text-align: center; margin-top: 30px; }
 
 label[for="user_login"],
 label[for="user_pass"],
@@ -192,6 +199,8 @@ body.single-question article .question { border-bottom: none; }
   border-radius: 0;
 }
 
+main.main { width: 100%; }
+
 .search-query:focus + button {
   z-index: 3;
 }
@@ -201,6 +210,7 @@ body.single-question article .question { border-bottom: none; }
 }
 
 body.page-template-template-contact form input[type="submit"],
+#project-form-container input[type="submit"],
 input.qa-edit-submit[type="submit"] {
   @extend .btn-blue;
   @extend .btn-outlined;
@@ -208,6 +218,9 @@ input.qa-edit-submit[type="submit"] {
   padding: 20px 60px;
   background-color: $background;
 }
+#project-form-container { margin-top: 5%; }
+#project-form-container input[type="submit"] { margin-right: 20px; }
+#project-form-container .gform_footer { text-align: right; }
 
 #wp-question_content-editor-tools { display: none; }
 form#question-form { margin-top: 40px; }
@@ -216,5 +229,13 @@ table#question-taxonomies { margin-top: 20px; margin-bottom: 30px; }
 div#ask-question { text-align: center; }
 textarea.wp-editor-area { border: solid 1px; }
 
-
-
+#start-discussion-button {
+  margin-right: 25px;
+  margin-bottom: 30px;
+}
+form[name="login"] {text-align: center; width: 50%; margin: auto;}
+form[name="login"] input[name="user_username"],
+form[name="login"] input[name="user_password"]
+{ float: left; }
+form[name="login"] input[name="user_username"] { margin-right: 10px; }
+form[name="login"] input[type="submit"]  { clear: both; }
