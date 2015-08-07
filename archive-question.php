@@ -39,7 +39,7 @@ get_template_part('templates/header');
 
 	<?php if ( !have_posts() ) : ?>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<p><?php $question_ptype = get_post_type_object( 'question' ); echo $question_ptype->labels->not_found; ?></p>
+			<p><?php $question_ptype = get_post_type_object( 'question' ); echo 'No discussions were found.' ?></p>
 		</div>
 	<?php else: ?>
 
@@ -54,11 +54,9 @@ get_template_part('templates/header');
 			<?php get_template_part('templates/content', 'question'); ?>
 		</div>
 
-		<?php if(!isset($_REQUEST['s']) && \Roots\Sage\Utils\show_posts_nav()) { ?>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-				<a id="see-all-discussions-button" class="btn btn-blue btn-outlined">SHOW MORE</a>
-			</div>
-		<?php } ?>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+			<a id="see-all-discussions-button" class="btn btn-blue btn-outlined">SHOW MORE</a>
+		</div>
 	<?php endif; ?>
 </div>
 
