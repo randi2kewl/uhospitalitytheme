@@ -4,11 +4,11 @@
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<span class="medium-grey">Popular Tags:</span>
 		<?php
-			wp_tag_cloud(array(
-				'smallest' => 1, 'largest' => 1, 'unit' => 'em', 'number' => 8,
-				'format' => 'flat', 'separator' => "", 'orderby' => 'count', 'order' => 'DESC',
-				'exclude' => '', 'include' => '', 'link' => 'view', 'taxonomy' => 'question_tag', 'post_type' => '', 'echo' => true
-			));
+		wp_tag_cloud(array(
+			'smallest' => 1, 'largest' => 1, 'unit' => 'em', 'number' => 8,
+			'format' => 'flat', 'separator' => "", 'orderby' => 'count', 'order' => 'DESC',
+			'exclude' => '', 'include' => '', 'link' => 'view', 'taxonomy' => 'question_tag', 'post_type' => '', 'echo' => true
+		));
 		?>
 	</div>
 </div>

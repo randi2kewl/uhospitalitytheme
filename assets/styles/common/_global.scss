@@ -30,3 +30,14 @@ body {
 .black { color: black; }
 a.qa-user-link { color: $brand-blue; }
 aside.sidebar { display: none; }
+
+/* Infinite Scroll */
+/* Hides navigation links and site footer when infinite scroll is active */
+body .infinite-scroll .navigation,
+body .infinite-scroll.neverending #footer {
+  display: none;
+}
+/* Shows the footer again in case all posts have been loaded */
+body .infinity-end.neverending #footer {
+  display: block;
+}

@@ -27,14 +27,11 @@
           $('p.login-password').replaceWith('<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" placeholder="Password">');
         }
 
-        $(document).on('click', '#see-all-projects-button', function(){
-          $.get("/project-api/",function(data){
-            $("#project-api").append(data);
-          },'html');
-        });
-
         $(document).on('click', '.must-log-in > a', function(){
           $('#login-form-container').slideDown(800);
+          if($(window).scrollTop() >= 300) { //has scrolled considerably to animate
+            $('html, body').animate({ scrollTop: '+0' }, 1200);
+          }
           return false;
         });
 
@@ -60,6 +57,8 @@
           if($('#registration-form-container').is(':visible')) {
             $('#registration-form-container').slideUp(800);
           }
+
+
         });
       },
       finalize: function() {

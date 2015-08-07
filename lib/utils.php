@@ -42,3 +42,11 @@ function uh_answer_count( $question_id = 0 ) {
 
     return sprintf( _n( '1 Comment', '%d Comments', $count, QA_TEXTDOMAIN ), number_format_i18n( $count ) );
 }
+
+/**
+ * If more than one page exists, return TRUE.
+ */
+function show_posts_nav() {
+    global $wp_query;
+    return ($wp_query->max_num_pages > 1);
+}

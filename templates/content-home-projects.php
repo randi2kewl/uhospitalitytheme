@@ -22,7 +22,7 @@
 			<div class="row">
 
 				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-					by <span class="blue"><?= get_post_field('by') ?></span>
+					by <span class="blue"><?= get_post_field('by', $post) ?></span>
 				</div>
 
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-right">
