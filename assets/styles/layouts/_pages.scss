@@ -6,14 +6,18 @@
     margin-top: 5%;
   }
 }
+
 #infinite-handle {
+  width: 100%;
   text-align: center;
 }
+
 #infinite-handle > span { 
   background-color: $background; 
   padding: 20px 60px; 
   color: $brand-blue;
   margin-top: 5%;
+  clear: both;
 }
 
 #infinite-handle > span:hover {
@@ -285,3 +289,7 @@ display: none;
 #user-forums {
 display: none;
 }   
+
+#content {
+  margin-bottom: 50px;
+}

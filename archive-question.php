@@ -53,7 +53,6 @@ get_template_part('templates/header');
 		<div id="content">
 			<?php get_template_part('templates/content', 'question'); ?>
 		</div>
-		<div class="clearfix"></div>
 	<?php endif; ?>
 </div>
 

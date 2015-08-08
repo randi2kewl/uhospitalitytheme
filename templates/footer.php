@@ -15,7 +15,7 @@
 			<a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png"></a>
 		</div>
 
-		<div class="col-xs-8 col-sm-8 col-md-9 col-lg-9 text-right">
+		<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 text-right">
 			<nav>
 				<?php
 				if (has_nav_menu('footer_navigation')) :
