@@ -89,7 +89,7 @@ function infinite_scroll_render() {
 function infinite_scroll_init() {
   add_theme_support( 'infinite-scroll', array( 
       'type'           => 'click',
-      'footer'         => false,
+      'footer'         => 'footer-social-links',
       'footer_widgets' => false,
       'container'      => 'content',
       'wrapper'        => true,
