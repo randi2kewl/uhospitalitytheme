@@ -7,6 +7,9 @@
  */
 do_action( 'bp_before_group_invites_content' ); ?>
 
+<?php gravity_form('Student Import', false, false, false, '', true, 1, true); ?>
+
+
 <?php if ( bp_has_groups( 'type=invites&user_id=' . bp_loggedin_user_id() ) ) : ?>
 
 	<ul id="group-list" class="invites item-list">

@@ -259,3 +259,29 @@ form[name="login"] input[name="user_password"]
 { float: left; }
 form[name="login"] input[name="user_username"] { margin-right: 10px; }
 form[name="login"] input[type="submit"]  { clear: both; }
+
+
+a#activity-personal-li {
+display: none;
+}
+a#user-xprofile {
+display: none;
+}
+a#user-friends {
+display: none;
+}
+a#user-groups {
+display: none;
+}
+a#user-profile {
+display: none;
+}
+a#user-settings {
+display: none;
+}
+a#user-messages {
+display: none;
+}
+#user-forums {
+display: none;
+}   

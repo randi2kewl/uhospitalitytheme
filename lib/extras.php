@@ -57,3 +57,31 @@ function sage_wrap_base_cpts($templates) {
   }
   return $templates; // Return our modified array with base-$cpt.php at the front of the queue
 }
+
+function add_login_logout_link($items, $args) {
+
+  if($args->theme_location == 'primary_navigation') {
+
+    ob_start();
+    wp_loginout('index.php');
+    $loginoutlink = ob_get_contents();
+    ob_end_clean();
+
+    if(is_user_logged_in()) {
+      $items .= '<li class="btn btn-blue btn-outlined menu-item"><a href="'.bp_loggedin_user_domain().'">Account</a></li>';
+      $items .= '<li class="btn btn-green btn-outlined menu-item"><a href="'.wp_logout_url( '/' ).'">Logout</a></li>';
+    } else {
+      $items .= '<li class="btn btn-blue btn-outlined registration-button menu-item"><a href="#">Sign Up</a></li>';
+      $items .= '<li class="btn btn-green btn-outlined login-button menu-item"><a href="#">Login</a></li>';
+    }
+
+  }
+  
+  return $items; 
+}
+add_filter('wp_nav_menu_items', __NAMESPACE__ . '\\add_login_logout_link', 10, 2); 
+
+
+
+
+
