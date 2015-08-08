@@ -24,6 +24,8 @@
         $('input[name="forgot"][type="submit"]').val('Reset Password');
         $('form[name="login"] input[type="submit"]').parent('.form-group').css('clear', 'both');
 
+        $('#infinite-handle > span').text('SHOW MORE').addClass('btn btn-blue btn-outlined');
+
         $(document).on('click', '.must-log-in > a', function(e){
           e.preventDefault();
 

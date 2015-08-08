@@ -45,17 +45,13 @@ get_template_part('templates/header');
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<h2 class="light-grey"><?php single_cat_title('Category: '); ?></h2>
+				<h2 class="light-grey"><?php single_cat_title('Tag: '); ?></h2>
 			</div>
 		</div>
 
 
 		<div id="content">
 			<?php get_template_part('templates/content', 'question'); ?>
-		</div>
-
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-			<a id="see-all-discussions-button" class="btn btn-blue btn-outlined">SHOW MORE</a>
 		</div>
 	<?php endif; ?>
 </div>

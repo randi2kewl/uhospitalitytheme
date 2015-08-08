@@ -38,7 +38,13 @@ function humanTiming ($time)
 
 // Took from Q&A plugin but needed the word Comment instead of Answer
 function uh_answer_count( $question_id = 0 ) {
-    $count = get_answer_count( $question_id ? $question_id : get_the_ID() );
+    $comments = get_comment_count( $question_id ? $question_id : get_the_ID() );
+
+    if($comments) {
+        $count = $comments['approved'];
+    } else {
+        $count = 0;
+    }
 
     return sprintf( _n( '1 Comment', '%d Comments', $count, QA_TEXTDOMAIN ), number_format_i18n( $count ) );
 }

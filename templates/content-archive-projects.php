@@ -16,10 +16,3 @@
 	<?php projects_by_page(1, 6); ?>
 	<?php endif; ?>
 </div>
-
-<div class="row">
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-		<a id="see-all-projects-button" class="btn btn-blue btn-outlined">SHOW MORE</a>
-	</div>
-</div>
-
