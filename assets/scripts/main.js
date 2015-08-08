@@ -35,8 +35,13 @@
           }
         });
 
-        $(document).on('click', '.menu-item.registration-button', function(e){
+        $(document).on('click', '.menu-item.registration-button, .signup-button', function(e){
           e.preventDefault();
+
+          $('.navbar-toggle:visible').click();
+          if($(window).scrollTop() >= 300) { //has scrolled considerably to animate
+            $('html, body').animate({ scrollTop: '+0' }, 1200);
+          }
 
           if($('#topBanner').is(':visible')) {
             $('#topBanner').slideUp(800);
@@ -52,6 +57,7 @@
         $(document).on('click', '.menu-item.login-button', function(e){
           e.preventDefault();
 
+          $('.navbar-toggle:visible').click();
           if($('#topBanner').is(':visible')) {
             $('#topBanner').slideUp(800);
           }
