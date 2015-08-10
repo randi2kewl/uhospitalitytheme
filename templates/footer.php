@@ -1,9 +1,9 @@
 <div id="footer-social-links" class="row">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 	  <h3><span>
-    <a href="http://twitter.com"><span class="fa fa-facebook black"></span></a>
-    <a href="http://twitter.com"><span class="fa fa-twitter black"></span></a>
-    <a href="http://twitter.com"><span class="fa fa-linkedin black"></span></a>
+    <a href="https://www.facebook.com/uhospitality"><span class="fa fa-facebook black"></span></a>
+    <a href="https://twitter.com/u_hospitality"><span class="fa fa-twitter black"></span></a>
+    <a href="https://www.linkedin.com/company/uhospitality"><span class="fa fa-linkedin black"></span></a>
 	  </span></h3>
   </div>
 </div>
