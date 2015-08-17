@@ -16,7 +16,7 @@ while ( have_posts() ) : the_post(); ?>
 					</div>
 
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 excerpt-container">
-						<?php the_title(); ?>
+						<?php echo \Roots\Sage\Utils\string_part(get_the_title(), 75); ?>
 					</div>
 
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 view-discussion-button">

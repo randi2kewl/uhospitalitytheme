@@ -126,3 +126,10 @@ global $bp, $wpdb;
      fclose($handle);
 }
 add_action( 'gform_after_submission_4', __NAMESPACE__ . '\\csv_upload_import', 10, 2 );
+
+function string_part($input = "", $maxLen = 180) {
+    if ( strlen($input) > $maxLen)
+        return substr($input, 0, $maxLen) . '...';
+    else
+        return $input;
+}
