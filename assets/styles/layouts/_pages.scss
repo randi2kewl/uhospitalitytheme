@@ -1,5 +1,6 @@
 #discussion-container {
   padding: 5%;
+  padding-top: 10px;
   background-color: $background;
 
   #see-all-discussions-button {
@@ -15,13 +16,13 @@
 #infinite-handle > span { 
   background-color: $background; 
   padding: 20px 60px; 
-  color: $brand-blue;
+  color: $brand-medium;
   margin-top: 5%;
   clear: both;
 }
 
 #infinite-handle > span:hover {
-  background-color: $brand-blue;
+  background-color: $brand-medium;
   color: white;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .tag-cloud a {
-  color: $brand-blue;
+  color: $brand-medium;
   margin-left: 20px;
 }
 
@@ -67,6 +68,7 @@ span.infinite-loader {
 #project-container {
 
   padding: 5%;
+  padding-top: 0;
 
   .project-title {
     margin-top: 10px;
@@ -93,10 +95,10 @@ span.infinite-loader {
 
 body.single-question,
 body.single-project {
-  .question-body a { color: $brand-blue; }
+  .question-body a { color: $brand-medium; }
   hr { margin-top: 0px; }
   input#submit {
-    background-color: $brand-green;
+    background-color: $brand-light;
     border-radius: 0;
     margin-top: 10px;
     padding: 5px 30px;
@@ -121,7 +123,7 @@ body.single-project {
 .member-info { padding: 50px; }
 
 body.page-template-template-about-us {
-  #topBannerText { background-color: $dark-green; }
+  #topBannerText { background-color: $brand-light; }
   .the-content { margin-bottom: 40px; color: $light-grey; }
   h2 { color: $medium-grey; }
 }

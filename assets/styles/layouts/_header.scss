@@ -5,8 +5,8 @@ header {
 
 #topBannerText {
   padding: 5% 10%;
-  background-color: #8EC2E6;
-  color: #FFFFFF;
+  background-color: $brand-medium;
+  color: white;
 
   h1 {
     font-size: 3em;
@@ -21,17 +21,33 @@ a.navbar-brand > img {
   height: 60px;
 }
 
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform:rotate(4deg);
+  }
+  50% {
+    -webkit-transform:rotate(-4deg);
+  }
+  100% {
+    -webkit-transform:rotate(4deg);
+  }
+}
+
+a.navbar-brand:hover {
+  -webkit-animation: wiggle 0.5s infinite;
+}
+
 nav.navbar ul > li > a {
-  color: #BCBCBD;
+  color: $medium-grey;
 }
 
 nav.navbar ul > li.current-menu-item > a {
-  color: $medium-grey;
+  color: $dark-grey;
 }
 
 .nav > li > a:focus, .nav > li > a:hover {
   background: transparent;
-  color: $medium-grey;
+  color: $dark-grey;
 }
 
 nav.navbar ul > li.btn-outlined {
@@ -45,16 +61,24 @@ nav.navbar ul > li.btn-outlined {
   }
 }
 
-nav.navbar ul > li.btn-outlined.btn-green > a {
-  color: $brand-green;
+nav.navbar ul > li.btn-outlined.btn-light > a {
+  color: white;
+  background: $brand-light;
+}
+
+nav.navbar ul > li.btn-outlined.btn-light > a:hover {
+  color: $brand-light;
+  background: white;
 }
 
 nav.navbar ul > li.btn-outlined.btn-blue > a {
-  color: $brand-blue;
+  color: white;
+  background: $brand-medium;
 }
 
-nav.navbar ul > li.btn-outlined > a:hover {
-  color: white;
+nav.navbar ul > li.btn-outlined.btn-blue > a:hover {
+  color: $brand-medium;
+  background: white;
 }
 
 nav.navbar ul > li.nav-social {
@@ -64,11 +88,11 @@ nav.navbar ul > li.nav-social {
 
   a {
     padding: 0;
-    color: #000000;
+    color: $brand-light;
   }
 
   a:hover {
-    color: $brand-blue;
+    color: $brand-medium;
   }
 }
 

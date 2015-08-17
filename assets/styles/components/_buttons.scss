@@ -17,16 +17,29 @@
   border-color: $brand-medium;
 }
 
-.btn-outlined.btn-green {
+.btn-outlined.btn-light {
   background: none;
   border: 3px solid $brand-light;
   color: $brand-light;
 }
-.btn-outlined.btn-green:hover,
-.btn-outlined.btn-green:active {
+.btn-outlined.btn-light:hover,
+.btn-outlined.btn-light:active {
   color: #FFF;
   background: $brand-light;
   border-color: $brand-light;
+}
+
+
+.btn-outlined.btn-green {
+  background: none;
+  border: 3px solid $brand-green;
+  color: $brand-green;
+}
+.btn-outlined.btn-green:hover,
+.btn-outlined.btn-green:active {
+  color: #FFF;
+  background: $brand-green;
+  border-color: $brand-green;
 }
 
 .btn-outlined.btn-primary {

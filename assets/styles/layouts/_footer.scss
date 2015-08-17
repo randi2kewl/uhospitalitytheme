@@ -7,8 +7,9 @@ footer {
   background-color: $background;
   padding: 1em;
 }
-#footer-social-links a:hover > span.fa { color: $brand-blue; }
+#footer-social-links a > span.fa { color: $brand-light; }
+#footer-social-links a:hover > span.fa { color: $brand-medium; }
 #menu-footer-navigation {  margin-top: 20px; }
-#menu-footer-navigation > li > a { color: $light-grey; }
-#menu-footer-navigation > li > a:hover { color: $medium-grey; }
-#menu-footer-navigation > li > a > span.green { color: $brand-green; }
+#menu-footer-navigation > li > a { color: $medium-grey; }
+#menu-footer-navigation > li > a:hover { color: $dark-grey; }
+#menu-footer-navigation > li > a > span.green { color: $brand-dark; }

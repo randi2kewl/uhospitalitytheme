@@ -69,10 +69,10 @@ function add_login_logout_link($items, $args) {
 
     if(is_user_logged_in()) {
       $items .= '<li class="btn btn-blue btn-outlined menu-item"><a href="'.bp_loggedin_user_domain().'">Account</a></li>';
-      $items .= '<li class="btn btn-green btn-outlined menu-item"><a href="'.wp_logout_url( '/' ).'">Logout</a></li>';
+      $items .= '<li class="btn btn-light btn-outlined menu-item"><a href="'.wp_logout_url( '/' ).'">Logout</a></li>';
     } else {
       $items .= '<li class="btn btn-blue btn-outlined registration-button menu-item"><a href="#">Sign Up</a></li>';
-      $items .= '<li class="btn btn-green btn-outlined login-button menu-item"><a href="#">Login</a></li>';
+      $items .= '<li class="btn btn-light btn-outlined login-button menu-item"><a href="#">Login</a></li>';
     }
 
   }

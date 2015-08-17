@@ -24,7 +24,7 @@ get_template_part('templates/header');
 <div id="discussion-container" class="row">
 
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
-		<a id="start-discussion-button" href="discussions/ask" class="btn btn-green btn-outlined">Start Discussion</a>
+		<a id="start-discussion-button" href="discussions/ask" class="btn btn-blue btn-outlined">Start Discussion</a>
 	</div>
 
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right question-search">
