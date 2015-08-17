@@ -79,9 +79,46 @@ function add_login_logout_link($items, $args) {
   
   return $items; 
 }
-add_filter('wp_nav_menu_items', __NAMESPACE__ . '\\add_login_logout_link', 10, 2); 
+add_filter('wp_nav_menu_items', __NAMESPACE__ . '\\add_login_logout_link', 10, 2);
 
+function remove_user_posts_column($column_headers) {
+  // Remove
+  unset($column_headers['posts']);
+  unset($column_headers['role']);
+  unset($column_headers['email']);
 
+  // Add
+  $column_headers['discussions'] = 'Discussions';
+  $column_headers['comments'] = 'Comments';
+  $column_headers['creation_date'] = 'Created';
 
+  return $column_headers;
+}
+add_action('manage_users_columns', __NAMESPACE__ . '\\remove_user_posts_column');
 
+function manage_users_lstdisplay($value, $column_name, $user_id) {
+  $user = get_userdata( $user_id );
 
+  switch($column_name) {
+    case 'discussions':
+      return count_user_posts( $user_id, "question" );
+      break;
+
+    case 'comments':
+      $comments = get_comments(array(
+          'user_id' => $user_id, // use user_id
+          'count' => true //return only the count
+      ));
+      return $comments;
+      break;
+
+    case 'creation_date':
+      return date( 'n/d/Y', strtotime( $user->user_registered ) );
+      break;
+
+    default:
+      return $value;
+      break;
+  }
+}
+add_action('manage_users_custom_column', __NAMESPACE__ . '\\manage_users_lstdisplay', 10, 3);
