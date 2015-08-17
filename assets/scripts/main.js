@@ -19,26 +19,30 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        $('input[name="user_username"]').attr('placeholder', 'Email');
+        $('input[name="user_password"]').attr('placeholder', 'Password');
+        $('input[name="forgot"][type="submit"]').val('Reset Password');
+        $('form[name="login"] input[type="submit"]').parent('.form-group').css('clear', 'both');
 
-        if(0 < $('#user_login').length) {
-          $('p.login-username').replaceWith('<input type="text" name="log" id="user_login" class="input" value="" size="20" placeholder="Email">')
-        }
-        if(0 < $('#user_pass').length) {
-          $('p.login-password').replaceWith('<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" placeholder="Password">');
-        }
+        $('#infinite-handle > span').text('SHOW MORE').addClass('btn btn-blue btn-outlined');
 
-        $(document).on('click', '#see-all-projects-button', function(){
-          $.get("/project-api/",function(data){
-            $("#project-api").append(data);
-          },'html');
-        });
+        $(document).on('click', '.must-log-in > a', function(e){
+          e.preventDefault();
 
-        $(document).on('click', '.must-log-in > a', function(){
           $('#login-form-container').slideDown(800);
-          return false;
+          if($(window).scrollTop() >= 300) { //has scrolled considerably to animate
+            $('html, body').animate({ scrollTop: '+0' }, 1200);
+          }
         });
 
-        $(document).on('click', '.menu-item.registration-button', function(){
+        $(document).on('click', '.menu-item.registration-button, .signup-button', function(e){
+          e.preventDefault();
+
+          $('.navbar-toggle:visible').click();
+          if($(window).scrollTop() >= 300) { //has scrolled considerably to animate
+            $('html, body').animate({ scrollTop: '+0' }, 1200);
+          }
+
           if($('#topBanner').is(':visible')) {
             $('#topBanner').slideUp(800);
           }
@@ -50,7 +54,10 @@
           }
         });
 
-        $(document).on('click', '.menu-item.login-button', function(){
+        $(document).on('click', '.menu-item.login-button', function(e){
+          e.preventDefault();
+
+          $('.navbar-toggle:visible').click();
           if($('#topBanner').is(':visible')) {
             $('#topBanner').slideUp(800);
           }
@@ -60,6 +67,22 @@
           if($('#registration-form-container').is(':visible')) {
             $('#registration-form-container').slideUp(800);
           }
+        });
+
+        $(document).on('click', '#forgot-password-link', function(e){
+          e.preventDefault();
+
+          $('#loginform').hide();
+          $('#login-form-label').text('Please enter your email. The password reset link will be provided in your email.');
+          $('#resetpassform').show();
+        });
+
+        $(document).on('click', '#forgot-cancel', function(e){
+          e.preventDefault();
+
+          $('#resetpassform').hide();
+          $('#login-form-label').text("Fill in the form below and you're ready to go!");
+          $('#loginform').show();
         });
       },
       finalize: function() {

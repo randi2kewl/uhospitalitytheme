@@ -1,9 +1,13 @@
-footer { border-top: solid #DBDBDB 1px; }
+footer { 
+  border-top: solid #DBDBDB 1px;
+  padding-left: 2%;
+  padding-right: 2%; 
+}
 #footer-social-links {
-  background-color: #FDFDFD;
+  background-color: $background;
   padding: 1em;
 }
-
+#footer-social-links a:hover > span.fa { color: $brand-blue; }
 #menu-footer-navigation {  margin-top: 20px; }
 #menu-footer-navigation > li > a { color: $light-grey; }
 #menu-footer-navigation > li > a:hover { color: $medium-grey; }

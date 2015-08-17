@@ -7,6 +7,24 @@
   }
 }
 
+#infinite-handle {
+  width: 100%;
+  text-align: center;
+}
+
+#infinite-handle > span { 
+  background-color: $background; 
+  padding: 20px 60px; 
+  color: $brand-blue;
+  margin-top: 5%;
+  clear: both;
+}
+
+#infinite-handle > span:hover {
+  background-color: $brand-blue;
+  color: white;
+}
+
 .tag-cloud {
   color: #76777C;
   padding: 10px 20px;
@@ -36,6 +54,16 @@
 
 }
 
+span.infinite-loader {
+  position: absolute;
+  bottom: 40px;
+  left: 49%;
+}
+
+.excerpt-container {
+  height: 35px;
+}
+
 #project-container {
 
   padding: 5%;
@@ -61,8 +89,10 @@
 }
 
 .avatar { border-radius: 50%; }
+.avatar-container > img.avatar.photo { margin-left:-10px; margin-top:-10px; }
 
-body.single-question {
+body.single-question,
+body.single-project {
   .question-body a { color: $brand-blue; }
   hr { margin-top: 0px; }
   input#submit {
@@ -88,6 +118,8 @@ body.single-question {
   .the-comment hr { margin-top: 10px; margin-bottom: 30px; }
 }
 
+.member-info { padding: 50px; }
+
 body.page-template-template-about-us {
   #topBannerText { background-color: $dark-green; }
   .the-content { margin-bottom: 40px; color: $light-grey; }
@@ -105,7 +137,9 @@ a#see-all-projects-button { margin-top: 30px; }
 }
 #registration-form-container label { display: none; }
 #registration-form-container input[type="submit"],
-input#wp-submit {
+input#wp-submit,
+#resetpassform input[type="submit"],
+#log_forms input[name="login"][type="submit"] {
   @extend .btn-blue;
   @extend .btn-outlined;
   @extend .btn;
@@ -113,9 +147,9 @@ input#wp-submit {
   background-color: $background;
 }
 
-input#wp-submit {
+#log_forms input[name="login"][type="submit"] {
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 #registration-form-container .gform_footer {
@@ -124,6 +158,9 @@ input#wp-submit {
 }
 #registration-form-container .registration-input input,
 #login-form-container input#user_login,
+#login-form-container input#pass1,
+#login-form-container input[name="user_username"],
+#login-form-container input[name="user_password"],
 #login-form-container input#user_pass {
   @extend .input-lg;
   -webkit-border-radius: 0;
@@ -134,6 +171,8 @@ input#wp-submit {
   border: solid 1px $light-grey;
   margin-top: 10px;
 }
+
+form[name="forgot"] { text-align: center; margin-top: 30px; }
 
 label[for="user_login"],
 label[for="user_pass"],
@@ -184,6 +223,8 @@ body.single-question article .question { border-bottom: none; }
   border-radius: 0;
 }
 
+main.main { width: 100%; }
+
 .search-query:focus + button {
   z-index: 3;
 }
@@ -192,10 +233,63 @@ body.single-question article .question { border-bottom: none; }
   display: none;
 }
 
-body.page-template-template-contact form input[type="submit"] {
+body.page-template-template-contact form input[type="submit"],
+#project-form-container input[type="submit"],
+input.qa-edit-submit[type="submit"] {
   @extend .btn-blue;
   @extend .btn-outlined;
   @extend .btn;
   padding: 20px 60px;
   background-color: $background;
+}
+#project-form-container { margin-top: 5%; }
+#project-form-container input[type="submit"] { margin-right: 20px; }
+#project-form-container .gform_footer { text-align: right; }
+
+#wp-question_content-editor-tools { display: none; }
+form#question-form { margin-top: 40px; }
+#wp-question_content-wrap.wp-editor-wrap { margin-top: 30px; }
+table#question-taxonomies { margin-top: 20px; margin-bottom: 30px; }
+div#ask-question { text-align: center; }
+textarea.wp-editor-area { border: solid 1px; }
+
+#start-discussion-button {
+  margin-right: 25px;
+  margin-bottom: 30px;
+}
+form[name="login"] {text-align: center; width: 50%; margin: auto;}
+form[name="login"] input[name="user_username"],
+form[name="login"] input[name="user_password"]
+{ float: left; }
+form[name="login"] input[name="user_username"] { margin-right: 10px; }
+form[name="login"] input[type="submit"]  { clear: both; }
+
+
+a#activity-personal-li {
+display: none;
+}
+a#user-xprofile {
+display: none;
+}
+a#user-friends {
+display: none;
+}
+a#user-groups {
+display: none;
+}
+a#user-profile {
+display: none;
+}
+a#user-settings {
+display: none;
+}
+a#user-messages {
+display: none;
+}
+#user-forums {
+display: none;
+}   
+
+#content {
+  margin-bottom: 50px;
 }

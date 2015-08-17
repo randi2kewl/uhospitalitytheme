@@ -49,6 +49,7 @@ function setup() {
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
+
 /**
  * Register sidebars
  */
@@ -72,3 +73,29 @@ function widgets_init() {
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
+
+
+function infinite_scroll_render() {
+  while (have_posts()) : the_post();
+  $post_type = (get_post_type() != 'post') ? get_post_type() : get_post_format();
+
+  if($post_type == 'question') {
+    $post_type = 'q';
+  }
+    get_template_part('templates/content', $post_type);
+  endwhile;
+}
+
+function infinite_scroll_init() {
+  add_theme_support( 'infinite-scroll', array( 
+      'type'           => 'click',
+      'footer'         => 'footer-social-links',
+      'footer_widgets' => false,
+      'container'      => 'content',
+      'wrapper'        => true,
+      'render'         =>  __NAMESPACE__ . '\\infinite_scroll_render',
+      'posts_per_page' => false,
+  ) );
+
+}
+add_action( 'init', __NAMESPACE__ . '\\infinite_scroll_init' );

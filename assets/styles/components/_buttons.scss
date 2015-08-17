@@ -7,26 +7,26 @@
 }
 .btn-outlined.btn-blue {
    background: none;
-   border: 3px solid $brand-blue;
-   color: $brand-blue;
+   border: 3px solid $brand-medium;
+   color: $brand-medium;
  }
 .btn-outlined.btn-blue:hover,
 .btn-outlined.btn-blue:active {
   color: #FFF;
-  background: $brand-blue;
-  border-color: $brand-blue;
+  background: $brand-medium;
+  border-color: $brand-medium;
 }
 
 .btn-outlined.btn-green {
   background: none;
-  border: 3px solid $brand-green;
-  color: $brand-green;
+  border: 3px solid $brand-light;
+  color: $brand-light;
 }
 .btn-outlined.btn-green:hover,
 .btn-outlined.btn-green:active {
   color: #FFF;
-  background: $brand-green;
-  border-color: $brand-green;
+  background: $brand-light;
+  border-color: $brand-light;
 }
 
 .btn-outlined.btn-primary {

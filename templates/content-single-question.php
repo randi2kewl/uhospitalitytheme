@@ -26,9 +26,17 @@
               <h2 class="entry-title black"><?php the_title(); ?></h2>
           </div>
 
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <?php do_action( 'qa_before_content', 'single-question' ); ?>
+          </div>
+
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 entry-content">
             <?php the_content(); ?>
           </div><!-- /.entry-content -->
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <?php do_action( 'qa_after_content', 'single-question' ); ?>
+          </div>
 
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <?php comments_template('/templates/comments.php'); ?>
