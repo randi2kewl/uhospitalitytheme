@@ -47,7 +47,7 @@ if (post_password_required()) {
 
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
-                by <?php bp_core_get_userlink($comment->user_id); ?>
+                by <?php echo the_qa_user_link($comment->user_id); ?>
               </div>
 
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
