@@ -33,7 +33,9 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-      <?php gravity_form('Project Information Form', false, false, false, '', true, 1, true); ?>
+      <div id="project_information_form">
+        <?php gravity_form('Project Information Form', false, false, false, '', true, 1, true); ?>
+      </div>
     </div>
   </div>
 <?php endwhile; ?>

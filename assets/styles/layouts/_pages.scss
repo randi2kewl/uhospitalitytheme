@@ -236,6 +236,7 @@ main.main { width: 100%; }
 }
 
 body.page-template-template-contact form input[type="submit"],
+#project_information_form form input[type="submit"],
 #project-form-container input[type="submit"],
 input.qa-edit-submit[type="submit"] {
   @extend .btn-blue;
@@ -247,6 +248,8 @@ input.qa-edit-submit[type="submit"] {
 #project-form-container { margin-top: 5%; }
 #project-form-container input[type="submit"] { margin-right: 20px; }
 #project-form-container .gform_footer { text-align: right; }
+
+#project_information_form .gform_footer { text-align: center; }
 
 #wp-question_content-editor-tools { display: none; }
 form#question-form { margin-top: 40px; }
