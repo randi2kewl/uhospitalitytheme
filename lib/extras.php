@@ -126,8 +126,10 @@ add_action('manage_users_custom_column', __NAMESPACE__ . '\\manage_users_lstdisp
 function mb_profile_menu_tabs(){
   global $bp;
 
-  $bp->bp_options_nav['settings']['invites'] = $bp->bp_options_nav['groups']['invites'];
-  $bp->bp_options_nav['settings']['invites']['position'] = 20;
+  if( \Roots\Sage\Utils\user_is_teacher( get_current_user_id() ) ) {
+    $bp->bp_options_nav['settings']['invites'] = $bp->bp_options_nav['groups']['invites'];
+    $bp->bp_options_nav['settings']['invites']['position'] = 20;
+  }
 
   $bp->bp_options_nav['settings']['general']['position'] = 10;
 
