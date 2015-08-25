@@ -1,6 +1,9 @@
 #activity-filter-select,
 #whats-new-form,
 #item-body > .activity,
+#contact_form_container label,
+form#login label, form#forgot label,
+label[for="user_login"],
+label[for="user_pass"],
+p.login-remember,
 .qa.qa-rep.activity { display: none; }
-
-label[for="input_2_1_3"] { display: none; }

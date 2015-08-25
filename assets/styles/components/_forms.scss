@@ -46,9 +46,6 @@ input#wp-submit,
 
 form[name="forgot"] { text-align: center; margin-top: 30px; }
 
-label[for="user_login"],
-label[for="user_pass"],
-p.login-remember { display: none; }
 #loginform { text-align: center; margin-top: 30px; }
 #login-form-container,
 #registration-form-container {
@@ -58,10 +55,6 @@ p.login-remember { display: none; }
 #resetpassform { display: none; }
 #forgot-password-link-container { text-align: center; margin-top: -25px; }
 
-form#login label, form#forgot label {
-  display: none;
-}
-
 #registration-form-container input {
   border-color: #888;
   color: #999;
@@ -69,6 +62,23 @@ form#login label, form#forgot label {
 
 form[name=login] {
   width: 100%;
+}
+
+#contact_form_container {
+    div.gform_footer.top_label { text-align: right; margin-right: 1em; }
+
+    form { max-width: 75%; }
+
+    input[type="text"],
+    textarea {
+        border-style: solid;
+        border-color: #888;
+        border-width: 1px;
+        margin-bottom: 1em;
+        font-size: 1.3em;
+        color: #666;
+        padding: 8px;
+    }
 }
 
 @media(max-width:767px){
@@ -91,6 +101,15 @@ form[name=login] {
   #registration-form-container input { width: 100%; }
 
   form[name="login"] .form-group:nth-of-type(-n+2) { display: block; }
+
+  #contact_form_container {
+
+    input[type="text"],
+    .gform_button,
+    textarea { width: 100%; }
+    form { max-width: 100%; }
+    div.gform_footer.top_label { margin-right: 0px; }
+  }
 }
 
 @media(min-width:768px){
