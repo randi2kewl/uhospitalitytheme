@@ -133,3 +133,18 @@ function string_part($input = "", $maxLen = 180) {
     else
         return $input;
 }
+
+function user_is_teacher( $user_id = null ) {
+
+    if ( ! $user_id ) {
+        $user_id = get_current_user_id();
+    }
+
+    $types = bp_get_member_type($user_id, false);
+    
+    if ( is_array($types) ) {
+        return in_array('teacher', $types);
+    } else {
+        return 'teacher' === $types;
+    }    
+}

@@ -122,3 +122,36 @@ function manage_users_lstdisplay($value, $column_name, $user_id) {
   }
 }
 add_action('manage_users_custom_column', __NAMESPACE__ . '\\manage_users_lstdisplay', 10, 3);
+
+function mb_profile_menu_tabs(){
+  global $bp;
+
+  if( \Roots\Sage\Utils\user_is_teacher( get_current_user_id() ) ) {
+    $bp->bp_options_nav['settings']['invites'] = $bp->bp_options_nav['groups']['invites'];
+    $bp->bp_options_nav['settings']['invites']['position'] = 20;
+  }
+
+  $bp->bp_options_nav['settings']['general']['position'] = 10;
+
+  $bp->bp_options_nav['settings']['change-avatar'] = $bp->bp_options_nav['profile']['change-avatar'];
+  $bp->bp_options_nav['settings']['change-avatar']['position'] = 30;
+
+
+//  $bp->bp_options_nav['settings']
+
+  unset($bp->bp_nav['activity']);
+  unset($bp->bp_nav['profile']);
+  unset($bp->bp_nav['notifications']);
+  unset($bp->bp_nav['groups']);
+
+  unset($bp->bp_options_nav['profile']);
+  unset($bp->bp_options_nav['activity']);
+  unset($bp->bp_options_nav['groups']);
+  unset($bp->bp_options_nav['notifications']);
+
+  unset($bp->bp_options_nav['settings']['profile']);
+  unset($bp->bp_options_nav['settings']['notifications']);
+
+  $bp->bp_nav['q-and-a']['name'] = 'View Profile';
+}
+add_action('bp_setup_nav', __NAMESPACE__ . '\\mb_profile_menu_tabs', 201);
