@@ -1,4 +1,4 @@
-header {
+  header {
   background-color: #FDFDFD;
   border-bottom: solid #DBDBDB 1px;
 }
@@ -107,3 +107,29 @@ nav.navbar ul > li.nav-social {
 form#login label, form#forgot label {
   display: none;
 }
+
+#registration-form-container input {
+  border-color: #888;
+  color: #888;
+}
+
+@media(max-width:767px){
+  .navbar-brand {
+    padding: 0;
+  }
+
+  #registration-form-container .gform_wrapper {
+    margin: 1em 1em;
+
+    span {
+      clear:both;
+      width: 99%;
+      margin-left: 0;
+    }
+  }
+}
+@media(min-width:768px){
+
+}
+@media(min-width:992px){}
+@media(min-width:1200px){}
