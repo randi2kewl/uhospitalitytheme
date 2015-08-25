@@ -37,24 +37,10 @@
   </div>
 
   <div id="login-form-container" class="row">
-    <div id="login-form-label" class="col-xs-12 col-sm-12 col-md-10 col-lg-9 col-md-offset-1 col-lg-offset-1 text-center">
+    <div id="login-form-label" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
       Fill in the form below and you're ready to go!
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9 col-md-offset-1 col-lg-offset-1 col-xs-offset-2">
-      <?php $args = array(
-          'echo'           => true,
-          'redirect' => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
-          'form_id'        => 'loginform',
-          'label_username' => __( '' ),
-          'label_password' => __( '' ),
-          'label_log_in'   => __( 'LOGIN' ),
-          'id_username'    => 'user_login',
-          'id_password'    => 'user_pass',
-          'id_submit'      => 'wp-submit',
-          'remember'       => false,
-          'value_username' => '',
-          'value_remember' => false
-      ); ?>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
         <div id="loginform">
             <?php echo do_shortcode('[login_widget]'); ?>
             <p id="forgot-password-link-container"><a href="#" id="forgot-password-link">Forgot password?</a></p>

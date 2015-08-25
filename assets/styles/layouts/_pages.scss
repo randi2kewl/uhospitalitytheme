@@ -13,9 +13,9 @@
   text-align: center;
 }
 
-#infinite-handle > span { 
-  background-color: $background; 
-  padding: 20px 60px; 
+#infinite-handle > span {
+  background-color: $background;
+  padding: 20px 60px;
   color: $brand-medium;
   margin-top: 5%;
   clear: both;
@@ -130,57 +130,6 @@ body.page-template-template-about-us {
 
 a#see-all-projects-button { margin-top: 30px; }
 
-#registration-form-container,
-#login-form-container {
-  color: $light-grey;
-  padding-top: 20px;
-  background-image: linear-gradient(top, $background, $background 80%, transparent 80%, transparent 100%);
-  background-image: -webkit-linear-gradient(top, $background, $background 80%, transparent 80%, transparent 100%)
-}
-#registration-form-container label { display: none; }
-#registration-form-container input[type="submit"],
-input#wp-submit,
-#resetpassform input[type="submit"],
-#log_forms input[name="login"][type="submit"] {
-  @extend .btn-blue;
-  @extend .btn-outlined;
-  @extend .btn;
-  padding: 20px 60px;
-  background-color: $background;
-}
-
-#log_forms input[name="login"][type="submit"] {
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
-#registration-form-container .gform_footer {
-  text-align: center;
-  margin-bottom: 20px;
-}
-#registration-form-container .registration-input input,
-#login-form-container input#user_login,
-#login-form-container input#pass1,
-#login-form-container input[name="user_username"],
-#login-form-container input[name="user_password"],
-#login-form-container input#user_pass {
-  @extend .input-lg;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  background-color: $background;
-  font-family: 'nexa_light', 'Arial', 'sans-serif';
-  border: solid 1px $light-grey;
-  margin-top: 10px;
-}
-
-form[name="forgot"] { text-align: center; margin-top: 30px; }
-
-label[for="user_login"],
-label[for="user_pass"],
-p.login-remember { display: none; }
-#loginform { text-align: center; margin-top: 30px; }
-
 body.single-question article .question { border-bottom: none; }
 
 #custom-search-form {
@@ -262,13 +211,6 @@ textarea.wp-editor-area { border: solid 1px; }
   margin-right: 25px;
   margin-bottom: 30px;
 }
-form[name="login"] {text-align: center; width: 50%; margin: auto;}
-form[name="login"] input[name="user_username"],
-form[name="login"] input[name="user_password"]
-{ float: left; }
-form[name="login"] input[name="user_username"] { margin-right: 10px; }
-form[name="login"] input[type="submit"]  { clear: both; }
-
 
 a#activity-personal-li {
 display: none;
@@ -293,7 +235,7 @@ display: none;
 }
 #user-forums {
 display: none;
-}   
+}
 
 #content {
   margin-bottom: 50px;

@@ -96,36 +96,9 @@ nav.navbar ul > li.nav-social {
   }
 }
 
-#login-form-container,
-#registration-form-container {
-  display: none;
-}
-.form-group.forgot-text { display: none; }
-#resetpassform { display: none; }
-#forgot-password-link-container { text-align: center; margin-top: -25px; }
-
-form#login label, form#forgot label {
-  display: none;
-}
-
-#registration-form-container input {
-  border-color: #888;
-  color: #888;
-}
-
 @media(max-width:767px){
   .navbar-brand {
     padding: 0;
-  }
-
-  #registration-form-container .gform_wrapper {
-    margin: 1em 1em;
-
-    span {
-      clear:both;
-      width: 99%;
-      margin-left: 0;
-    }
   }
 }
 @media(min-width:768px){

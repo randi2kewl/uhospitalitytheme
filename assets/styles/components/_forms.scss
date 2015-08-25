@@ -1,0 +1,101 @@
+form[name="login"] {text-align: center; width: 50%; margin: auto;}
+form[name="login"] input[name="user_username"] { margin-right: 10px; }
+form[name="login"] input[type="submit"]  { clear: both; }
+#registration-form-container,
+#login-form-container {
+  color: $light-grey;
+  padding-top: 20px;
+  background-image: linear-gradient(top, $background, $background 80%, transparent 80%, transparent 100%);
+  background-image: -webkit-linear-gradient(top, $background, $background 80%, transparent 80%, transparent 100%)
+}
+#registration-form-container label { display: none; }
+#registration-form-container input[type="submit"],
+input#wp-submit,
+#resetpassform input[type="submit"],
+#log_forms input[name="login"][type="submit"] {
+  @extend .btn-blue;
+  @extend .btn-outlined;
+  @extend .btn;
+  padding: 20px 60px;
+  background-color: $background;
+}
+
+#log_forms input[name="login"][type="submit"] {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+#registration-form-container .gform_footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#registration-form-container .registration-input input,
+#login-form-container input#user_login,
+#login-form-container input#pass1,
+#login-form-container input[name="user_username"],
+#login-form-container input[name="user_password"],
+#login-form-container input#user_pass {
+  @extend .input-lg;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background-color: $background;
+  font-family: 'nexa_light', 'Arial', 'sans-serif';
+  border: solid 1px $light-grey;
+  margin-top: 10px;
+}
+
+form[name="forgot"] { text-align: center; margin-top: 30px; }
+
+label[for="user_login"],
+label[for="user_pass"],
+p.login-remember { display: none; }
+#loginform { text-align: center; margin-top: 30px; }
+#login-form-container,
+#registration-form-container {
+  display: none;
+}
+.form-group.forgot-text { display: none; }
+#resetpassform { display: none; }
+#forgot-password-link-container { text-align: center; margin-top: -25px; }
+
+form#login label, form#forgot label {
+  display: none;
+}
+
+#registration-form-container input {
+  border-color: #888;
+  color: #999;
+}
+
+form[name=login] {
+  width: 100%;
+}
+
+@media(max-width:767px){
+  #registration-form-container .gform_wrapper {
+    margin: 1em;
+
+    span {
+      clear:both;
+      width: 99%;
+      margin-left: 0;
+    }
+  }
+
+  form[name=login] .form-group {
+    margin: 1em;
+
+    input { width: 100%; }
+  }
+
+  #registration-form-container input { width: 100%; }
+
+  form[name="login"] .form-group:nth-of-type(-n+2) { display: block; }
+}
+
+@media(min-width:768px){
+    form[name="login"] .form-group:nth-of-type(-n+2) { display: inline; }
+}
+@media(min-width:992px){}
+@media(min-width:1200px){}
