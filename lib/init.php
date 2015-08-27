@@ -98,3 +98,22 @@ function infinite_scroll_init() {
 
 }
 add_action( 'init', __NAMESPACE__ . '\\infinite_scroll_init' );
+
+function user_setup_after_registration( $user_id ) {
+    if( isset($_POST['input_8']) ) {
+        $sent = wpMandrill::mail(
+            $_POST['input_8'], //to email
+            "Welcome to Uhospitality!", //subject
+            "", //html
+            "", //headers
+            array(), //attachments
+            array('new_member'), //tags
+            "Uhospitality", //from name
+            "anandp@myriann.com", //from email
+            "wp_welcome_email" // template name
+        );
+
+        echo $sent;
+    }
+}
+add_action( 'user_register', __NAMESPACE__ . '\\user_setup_after_registration', 10, 1);
