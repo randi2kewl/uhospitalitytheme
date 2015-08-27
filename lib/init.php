@@ -86,7 +86,7 @@ function infinite_scroll_render() {
 }
 
 function infinite_scroll_init() {
-  add_theme_support( 'infinite-scroll', array( 
+  add_theme_support( 'infinite-scroll', array(
       'type'           => 'click',
       'footer'         => 'footer-social-links',
       'footer_widgets' => false,
@@ -100,20 +100,21 @@ function infinite_scroll_init() {
 add_action( 'init', __NAMESPACE__ . '\\infinite_scroll_init' );
 
 function user_setup_after_registration( $user_id ) {
-    if( isset($_POST['input_8']) ) {
-        $sent = wpMandrill::mail(
-            $_POST['input_8'], //to email
-            "Welcome to Uhospitality!", //subject
-            "", //html
-            "", //headers
-            array(), //attachments
-            array('new_member'), //tags
-            "Uhospitality", //from name
-            "anandp@myriann.com", //from email
-            "wp_welcome_email" // template name
-        );
+    $user_email = $_POST['input_8'];
 
-        echo $sent;
-    }
+    $sent = \wpMandrill::mail(
+        $user_email, //to email
+        "Welcome to Uhospitality!", //subject
+        "", //html
+        "", //headers
+        array(), //attachments
+        array('new_member'), //tags
+        "Uhospitality", //from name
+        "anandp@myriann.com", //from email
+        "wp_welcome_email" // template name
+    );
+
+
+    error_log('flag 1: ' . $user_id . ' ----' . $user_email . ' ------ ' . $sent);
 }
 add_action( 'user_register', __NAMESPACE__ . '\\user_setup_after_registration', 10, 1);
