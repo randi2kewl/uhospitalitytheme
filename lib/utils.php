@@ -59,11 +59,6 @@ global $bp, $wpdb;
   $bp->group_invite_email->table_name = $wpdb->base_prefix . 'bp_group_invite_email';
   $bp->group_invite_email->format_notification_function = 'bp_group_invite_email_format_notifications';
 
-    /* For internal identification */
-    $bp->group_invite_email->id = 'group_invite_email';
-    $bp->group_invite_email->table_name = $wpdb->base_prefix . 'bp_group_invite_email';
-    $bp->group_invite_email->format_notification_function = 'bp_group_invite_email_format_notifications';
-    
     if ( ! class_exists( '\\BP_Groups_Group' ) || ! class_exists( '\\BP_Group_Invite_Email' )  )
         return;
 
@@ -76,7 +71,7 @@ global $bp, $wpdb;
      while( ($row = fgetcsv($handle) ) !== FALSE ) {
 
         if(isset($row[0]) && isset($row[1])) {
- 
+
             $new_group = new \BP_Groups_Group();
 
             if(! isset($row[2])) {
@@ -96,7 +91,7 @@ global $bp, $wpdb;
                 $new_group->enable_forum = 0;
                 $new_group->date_created = $group->date_created;
 
-         
+
                 $check = $new_group->save();
 
                 if($id = $new_group->id) {
@@ -109,13 +104,20 @@ global $bp, $wpdb;
 
 
             if($new_group->id) {
-                //now add the student to that group
-                $invite = new \BP_Group_Invite_Email();
-                $invite->recipient_email = trim($row[0]);
-                $invite->group_id = $new_group->id;
-                $invite->sender_id = $bp->loggedin_user->id;
-                $invite->send_email();
-                $invite->save();
+                //now add the student to that group or email invite
+                $the_user = get_user_by('email', $row[0] );
+
+                if($the_user) {
+                    groups_join_group( $new_group->id, $the_user->ID );
+                    bp_set_member_type( $the_user->ID, 'student' );
+                } else {
+                    $invite = new \BP_Group_Invite_Email();
+                    $invite->recipient_email = trim($row[0]);
+                    $invite->group_id = $new_group->id;
+                    $invite->sender_id = $bp->loggedin_user->id;
+                    $invite->send_email();
+                    $invite->save();
+                }
 
                 groups_join_group( $new_group->id );
                 groups_promote_member( $bp->loggedin_user->id, $new_group->id, 'mod' );
@@ -126,6 +128,11 @@ global $bp, $wpdb;
      fclose($handle);
 }
 add_action( 'gform_after_submission_4', __NAMESPACE__ . '\\csv_upload_import', 10, 2 );
+
+function set_member_type_to_student($user_id) {
+    bp_set_member_type( $the_user->ID, 'student' );
+}
+add_action( 'bp_gie_after_user_added_to_group', __NAMESPACE__ . '\\set_member_type_to_student', 10, 1);
 
 function string_part($input = "", $maxLen = 180) {
     if ( strlen($input) > $maxLen)
@@ -141,10 +148,10 @@ function user_is_teacher( $user_id = null ) {
     }
 
     $types = bp_get_member_type($user_id, false);
-    
+
     if ( is_array($types) ) {
         return in_array('teacher', $types);
     } else {
         return 'teacher' === $types;
-    }    
+    }
 }

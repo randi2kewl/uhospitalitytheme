@@ -45,7 +45,6 @@ function setup() {
   if( ! current_user_can('administrator') && ! is_admin() ) {
     add_filter('show_admin_bar', '__return_false');
   }
-
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
@@ -113,8 +112,5 @@ function user_setup_after_registration( $user_id ) {
         "anandp@myriann.com", //from email
         "wp_welcome_email" // template name
     );
-
-
-    error_log('flag 1: ' . $user_id . ' ----' . $user_email . ' ------ ' . $sent);
 }
 add_action( 'user_register', __NAMESPACE__ . '\\user_setup_after_registration', 10, 1);
