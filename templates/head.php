@@ -5,7 +5,7 @@
 
   <?php if( is_page( 'discussions' ) ): ?>
     <?php while (have_posts()) : the_post(); ?>
-        <meta property="og:description"   content="<?php echo the_content(); ?>" />
+        <meta property="og:description"   content="<?php echo the_content(); ?> via @uhospitality" />
     <?php endwhile; ?>
   <?php endif; ?>
   <?php wp_head(); ?>
