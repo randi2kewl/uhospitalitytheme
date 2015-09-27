@@ -11,11 +11,15 @@
 <footer class="content-info light-grey" role="contentinfo">
 
 	<div class="row">
-		<div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
-			<a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png"></a>
+		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="navbar-brand">
+            <a class="logo" href="<?= esc_url(home_url('/')); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png"></a>
+            <a class="logo" href="<?= esc_url('http://www.gsu.edu'); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/gsu_logo.jpeg"></a>
+
+            </div>
 		</div>
 
-		<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 text-right">
+		<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 text-right">
 			<nav>
 				<?php
 				if (has_nav_menu('footer_navigation')) :

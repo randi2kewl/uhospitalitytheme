@@ -73,7 +73,7 @@
           e.preventDefault();
 
           $('#loginform').hide();
-          $('#login-form-label').text('Please enter your email. The password reset link will be provided in your email.');
+          $('#login-form-label').text('');
           $('#resetpassform').show();
         });
 
@@ -81,9 +81,31 @@
           e.preventDefault();
 
           $('#resetpassform').hide();
-          $('#login-form-label').text("Fill in the form below and you're ready to go!");
+          $('#login-form-label').text("");
           $('#loginform').show();
         });
+
+        $(document).on('submit', '#forgot', function(e) {
+          e.preventDefault();
+
+            $.ajax({
+               type: "POST",
+               url: $("form#forgot").attr('action'),
+               data: $("form#forgot").serialize(), // serializes the form's elements.
+               success: function(data){}
+             });
+
+          $('#login-form-label').text('Please check your email for further directions.');
+        });
+
+        if($('.et_social_gmail > a').length) {
+          $('.et_social_gmail > a').each(function(){
+            var subject = $('.entry-title').text();
+            var body = window.location.href;
+
+            $(this).attr('href', 'mailto:?subject=' + subject + '&body=' + body);
+          });
+        }
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

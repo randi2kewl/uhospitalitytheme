@@ -4,6 +4,16 @@
     <div class="row light-grey">
 
       <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2">
+
+      <div class="row">
+        <div class="col-xs-10 col-sm-4 col-md-3 col-lg-3 pull-right">
+          <?php if (has_post_thumbnail( $post->ID ) ): ?>
+          <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+          <img class="project-avatar" src="<?php echo $image[0]; ?>" style="width: 100%;">
+          <?php endif; ?>
+        </div>
+      </div>
+
         <div class="row question-body">
 
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">

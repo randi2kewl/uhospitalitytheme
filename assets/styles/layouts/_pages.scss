@@ -65,6 +65,8 @@ span.infinite-loader {
   height: 35px;
 }
 
+.project-excerpt { height: 35px; }
+
 #project-container {
 
   padding: 5%;
@@ -205,7 +207,14 @@ form#question-form { margin-top: 40px; }
 #wp-question_content-wrap.wp-editor-wrap { margin-top: 30px; }
 table#question-taxonomies { margin-top: 20px; margin-bottom: 30px; }
 table#question-taxonomies td { padding-right: 50px; }
-div#ask-question { text-align: center; }
+div#ask-question {
+  text-align: center;
+
+  label[for="question-title"] { margin-right: 15px; }
+  #question-tags-label { padding-right: 15px; }
+  #wp-question_content-wrap, input[type="text"] { border: 1px solid #8C8C8C; }
+  #tiny-mce { font-family: 'nexa', 'Arial', 'sans-serif'; }
+}
 textarea.wp-editor-area { border: solid 1px; }
 
 #start-discussion-button {

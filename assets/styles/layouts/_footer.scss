@@ -1,7 +1,7 @@
-footer { 
+footer {
   border-top: solid #DBDBDB 1px;
   padding-left: 2%;
-  padding-right: 2%; 
+  padding-right: 2%;
 }
 #footer-social-links {
   background-color: $background;
@@ -13,3 +13,20 @@ footer {
 #menu-footer-navigation > li > a { color: $medium-grey; }
 #menu-footer-navigation > li > a:hover { color: $dark-grey; }
 #menu-footer-navigation > li > a > span.green { color: $brand-dark; }
+
+@media(max-width:767px){
+  footer .navbar-brand a {
+    text-align: center;
+  }
+}
+@media(min-width:768px){
+    .footer navbar-brand a {
+        text-align: center;
+    }
+}
+@media(min-width:992px){
+    footer .navbar-brand a {
+        text-align: left;
+    }
+}
+@media(min-width:1200px){}

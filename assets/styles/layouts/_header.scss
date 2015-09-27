@@ -17,7 +17,7 @@ nav.navbar ul {
   margin-top: 20px;
 }
 
-a.navbar-brand > img {
+.navbar-brand > a > img {
   height: 60px;
 }
 
@@ -33,7 +33,7 @@ a.navbar-brand > img {
   }
 }
 
-a.navbar-brand:hover {
+.navbar-brand > a:hover {
   -webkit-animation: wiggle 0.5s infinite;
 }
 
@@ -102,7 +102,9 @@ nav.navbar ul > li.nav-social {
   }
 }
 @media(min-width:768px){
-
+  .navbar-brand > a > img {
+      padding-right: 20px;
+  }
 }
 @media(min-width:992px){}
 @media(min-width:1200px){}

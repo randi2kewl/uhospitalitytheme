@@ -10,7 +10,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png"></a>
+          <div class="navbar-brand">
+            <a class="logo" href="<?= esc_url(home_url('/')); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png"></a>
+            <a class="logo" href="<?= esc_url('http://www.gsu.edu/'); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/gsu_logo.jpeg"></a>
+          </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,7 +32,6 @@
 
   <div id="registration-form-container" class="row">
     <div id="registration-form-label" class="ccol-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 text-center">
-      Fill in the form below and you're ready to go!
     </div>
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
       <?php gravity_form('Registration', false, false, false, '', true, 1, true); ?>
@@ -37,9 +39,7 @@
   </div>
 
   <div id="login-form-container" class="row">
-    <div id="login-form-label" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-      Fill in the form below and you're ready to go!
-    </div>
+    <div id="login-form-label" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center"></div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
         <div id="loginform">
             <?php echo do_shortcode('[login_widget]'); ?>
