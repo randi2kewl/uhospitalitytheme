@@ -14,7 +14,7 @@
 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="navbar-brand">
             <a class="logo" href="<?= esc_url(home_url('/')); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png"></a>
-            <a class="logo" href="<?= esc_url('http://www.gsu.edu'); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/gsu_logo.jpeg"></a>
+            <a class="logo" href="<?= esc_url('http://www.gsu.edu'); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/gsu_logo.png"></a>
 
             </div>
 		</div>
