@@ -1,5 +1,16 @@
-<div id="buddypress">
+<?php $post = get_page_by_title( 'Activate' ); ?>
+<?php $post_meta = get_post_meta($post->ID); ?>
 
+<?php if( isset($post_meta['Top Title'][0]) && $post_meta['Top Title'][0] !== '' ) : ?>
+    <div id="topBanner" class="row">
+        <div id="topBannerText" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <h1><?php echo $post_meta['Top Title'][0]; ?></h1>
+        </div>
+    </div>
+<?php endif; ?>
+
+
+<div id="buddypress_activate_container" class="row">
 	<?php
 
 	/**
@@ -9,7 +20,13 @@
 	 */
 	do_action( 'bp_before_activation_page' ); ?>
 
-	<div class="page" id="activate-page">
+	<div class="page col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2" id="activate-page">
+
+		<?php if( isset($post->post_content) ) : ?>
+			<div>
+				<?php echo do_shortcode($post->post_content ); ?>
+			</div>
+		<?php endif; ?>
 
 		<?php
 
@@ -43,7 +60,7 @@
 				<input type="text" name="key" id="key" value="" />
 
 				<p class="submit">
-					<input type="submit" name="submit" value="<?php esc_attr_e( 'Activate', 'buddypress' ); ?>" />
+					<input class="btn-outlined btn-blue" type="submit" name="submit" value="<?php esc_attr_e( 'Activate', 'buddypress' ); ?>" />
 				</p>
 
 			</form>

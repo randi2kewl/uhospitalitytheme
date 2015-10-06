@@ -222,6 +222,11 @@ textarea.wp-editor-area { border: solid 1px; }
   margin-bottom: 30px;
 }
 
+#gsu_container,
+#register_page_content_container,
+#activate_page_content_container,
+#buddypress_activate_container { margin-top: 50px; margin-bottom: 50px; }
+
 a#activity-personal-li {
 display: none;
 }
